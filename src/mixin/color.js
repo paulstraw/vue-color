@@ -32,7 +32,7 @@ module.exports = {
       oldHue: 0
     }
   },
-  created () {
+  created: function() {
     // console.log(this.colors)
     /*
       Enforce the colorChange in case only HEX value is given.
