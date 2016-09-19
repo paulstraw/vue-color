@@ -1,4 +1,4 @@
-import tinycolor from 'tinycolor2'
+var tinycolor = require('tinycolor2');
 
 function _colorChange (data, oldHue) {
   if (data.a && data.a > 1) {
@@ -23,11 +23,11 @@ function _colorChange (data, oldHue) {
   }
 }
 
-export default {
+module.exports = {
   props: {
     colors: Object
   },
-  data () {
+  data: function() {
     return {
       oldHue: 0
     }
@@ -43,14 +43,14 @@ export default {
     this.colors = _colorChange(this.colors)
   },
   methods: {
-    colorChange (data, oldHue) {
+    colorChange: function(data, oldHue) {
       this.colors = _colorChange(data, oldHue || this.oldHue)
       this.oldHue = this.colors.hsl.h
     },
-    isValidHex (hex) {
+    isValidHex: function(hex) {
       return tinycolor(hex).isValid()
     },
-    simpleCheckForValidColor (data) {
+    simpleCheckForValidColor: function(data) {
       var keysToCheck = ['r', 'g', 'b', 'a', 'h', 's', 'a', 'v']
       var checked = 0
       var passed = 0
