@@ -88,5 +88,8 @@
     "webpack-hot-middleware": "^2.x.x",
     "webpack-merge": "^0.14.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "browserify": {
+    "transform": [ "vueify" ]
+  }
 }
